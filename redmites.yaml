@@ -1,0 +1,16 @@
+#train: datasets/images/train
+#val: datasets/images/train   # using train as temporary val
+#nc: 1                         # number of classes
+#names: ['redmites']
+
+# redmites.yaml
+path: /Users/usmanhussain/PycharmProjects/pest_identification_in_cashew copy
+train: images/train
+val: images/val
+test:  # optional test images
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['redmites']

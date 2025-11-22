@@ -1,0 +1,30 @@
+from ultralytics import YOLO
+
+# ---------------------------------------------------
+# Load your trained YOLOv8 model
+# ---------------------------------------------------
+model = YOLO("runs/detect/train/weights/best.pt")   # <-- your trained model
+
+# ---------------------------------------------------
+# Choose a test image (put images inside test_images/)
+# ---------------------------------------------------
+image_path = "test_images/redmite.jpeg"  # change to your image file
+
+# ---------------------------------------------------
+# Run detection
+# ---------------------------------------------------
+results = model(image_path)
+
+# ---------------------------------------------------
+# Print prediction details
+# ---------------------------------------------------
+for r in results:
+    print("Detected objects:", r.boxes)
+    print("Class names:", r.names)
+
+# ---------------------------------------------------
+# Save output image with bounding boxes
+# ---------------------------------------------------
+results[0].save("prediction.jpg")
+
+print("✅ Prediction saved as prediction.jpg")
