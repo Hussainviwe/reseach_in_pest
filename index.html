@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cashew Pest Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            text-align: center;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #2ecc71;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>🌱 Cashew Pest Detection</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required><br><br>
+        <button type="submit">Detect Pest</button>
+    </form>
+
+    {% if image_path %}
+        <h3>Detection Result</h3>
+        <img src="{{ url_for('static', filename=image_path) }}">
+    {% endif %}
+</div>
+
+</body>
+</html>
